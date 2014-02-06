@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Активация аккаунта</h1>
+    <?php if( empty( $d['activated'] )): ?>
+        <div class="alert alert-danger">
+            Не получилось активировать аккаунт. Возможно, истек код активации.
+        </div>
+    <?php else: ?>
+        <div class="alert alert-info">
+            Вы активировали свой аккаунт. Добро пожаловать!
+        </div>
+    <?php endif; ?>
+</div>
+<script type="text/javascript">
+    setTimeout( function(){
+        window.location.href = '/';
+    }, 5000 );
+</script>

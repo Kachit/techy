@@ -1,0 +1,25 @@
+<div class="container">
+        <table class="table table-condensed table-striped">
+            <thead>
+            <tr>
+                <td>#</td>
+                <td>email</td>
+                <td>имя</td>
+            </tr>
+            </thead>
+            <tbody id="users">
+            <?php
+            $I18n = \Techy\Lib\Core\System\Application::instance()->getI18n();
+            foreach( $d['users'] as $user ){
+                echo <<<HTML
+        <tr>
+            <td>{$user['user_id']}</td>
+            <td>{$user['email']}</td>
+            <td>{$user['data']['name']}</td>
+        </tr>
+HTML;
+            }
+            ?>
+            </tbody>
+        </table>
+</div>

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="col-lg-7">
+        <table class="table table-condensed table-striped">
+            <thead>
+            <tr>
+                <td>#</td>
+                <td>login</td>
+            </tr>
+            </thead>
+            <tbody id="admins">
+            <?php
+            $I18n = \Techy\Lib\Core\System\Application::instance()->getI18n();
+            foreach( $d['admins'] as $admin ){
+                echo <<<HTML
+        <tr>
+            <td>{$admin['user_id']}</td>
+            <td>{$admin['login']}</td>
+        </tr>
+HTML;
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-3">
+        <form action="" method="post" id="formNewAdmin">
+            <fieldset class="panel panel-default">
+                <div class="panel-heading">НОВЫЙ ПОЛЬЗОВАТЕЛЬ</div>
+                <div class="panel-body">
+                    <div class="-form-errors-"></div>
+
+                    <div class="form-group -login-">
+                        <label class="control-label">login</label>
+                        <input type="text" name="login" class="form-control input-sm" />
+                    </div>
+
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="submit" class="btn btn-primary">Создать</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

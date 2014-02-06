@@ -1,0 +1,9 @@
+<?php
+    $domain = \Techy\Config\Domain::instance()->main();
+    echo <<<HTML
+Здравствуйте, {$d['name']}!
+<br />
+<br />Для входа на сайт <a href="$domain">$domain</a>
+<br />Ваш логин: этот email-адрес.
+<br />Ваш пароль: {$d['password']}
+HTML;
